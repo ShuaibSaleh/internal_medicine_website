@@ -9,9 +9,9 @@
 # Team Members
 <br><br>
 
-|Name | Sec. |
-|-----------------|-----------------|
-| Osamah Faisl | 1 | 
-| Shuaib Abdulsalam | 1 | 
-| Hussein Mohammed | 1 |
-| Eazzt Hegazy | 2 |
+| N             | Name          |
+| ------------- | ------------- |
+| 1             | Osamah Faisal |
+| 2             | Shuaib Abdulsalam  |
+| 3             | Hussein Mohammed |
+| 4             | Eazzt Hegazy |
