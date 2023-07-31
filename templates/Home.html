@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="with=device-width,intial-scale = 1.0">
+        <title>Covid-19 Test</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'Style.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">-->   
+       
+        
+    </head>
+    <body>
+        <section class="header">
+            
+        
+             
+            <nav>
+                <a href="http://127.0.0.1:4000/"><img src="{{ url_for('static', filename = 'images/logo3.png')}}" alt="internal medicine"  class="x3"></a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="{{ url_for('Home') }}">Home</a></li>
+                        
+                        <li><a href="{{ url_for('signup') }}">signup</a></li>
+                        <li><a href="{{ url_for('signin') }}">signin</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+            
+
+            {% block body %}
+
+                <div class="text">
+                    <h1>WELCOME TO INTERNAL MEDICINE DEPARTMENT</h1> <br>
+                    <a href="" class="more-btn">Visit us to know more</a>
+                </div>
+
+            {% endblock %}
+            
+           
+        </section>
+
+
+        <!-- done for here  -->
+        
+    </body>
+</html>

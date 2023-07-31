@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'Style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+     
+
+</head>
+  <body>
+
+
+  
+            
+            
+            <section class="header">
+            
+        
+             
+                <nav>
+                    <a href="{{ url_for('Home') }}"><img src="{{ url_for('static', filename = 'images/logo3.png')}}" alt="internal medicine"  class="x3"></a>
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="{{ url_for('Home') }}">Home</a></li>
+                            
+                            <li><a href="{{ url_for('signup') }}">signup</a></li>
+                            <li><a href="{{ url_for('signin') }}">signin</a></li>
+                        </ul>
+    
+                    </div>
+                </nav>
+              
+                
+                <br>
+            {% block form %}
+            <div  style="margin-left: 35%;"> 
+
+
+             <form action="{{ url_for('signup') }}" style="color: antiquewhite;"  style="margin-left: 40%;"  method="post">
+                    <br>
+            <div class="mb-3"  style="width: 40%;">
+                <div class="row">
+                    <div class="col">
+                    <input type="text" class="form-control" placeholder="First name" aria-label="First name" required name="Fname">
+                    </div>
+                    <div class="col">
+                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" required name="Lname">
+                    </div>
+                </div>
+                </div>
+            <br>
+                <div class="mb-3" style="width: 40%;">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required name="Email">
+                <div id="emailHelp" class="form-text" style="color: antiquewhite;">We'll never share your email with anyone else.</div>
+                </div>
+            <br>
+                <div class="mb-3"  style="width: 40%;">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="Password1"  required name="password">
+                <div id="passwordHelp" class="form-text" style="color: antiquewhite;">We'll never share your password with anyone else.</div>
+                </div>
+            <br>
+                <div class="mb-3"  style="width: 40%;">
+                    <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="Password2"  required name="confirmPassword">
+                    <div id="confirmPasswordHelp" class="form-text" style="color: rgb(239, 16, 16);">{{ messege }}</div>
+
+                    
+                     
+                </div>
+
+                <!--  not match password -->
+                <!-- <div style="color: red;">
+                    {{ messege }}
+                 </div> -->
+                
+            <br>
+                
+            
+            
+            
+                <div class="mb-3"  style="width: 40%;">
+                        <label for="selectGender" class="form-label">Select gender</label>
+                        <select class="form-select" id="selectGender" aria-label="Select gender" required name="gender">
+                        <option selected>Select gender</option>
+                        
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        </select>
+                    </div>
+            <br>
+                    <div class="mb-3"  style="width: 40%;">
+                    <div class="row">
+                        <div class="col">
+                        <label for="birthdate" class="form-label">Enter your birthdate</label>
+                        <input type="date" class="form-control" id="birthdate" placeholder="Birthdate" aria-label="Birthdate" required name="Birthdate">
+                        </div>
+                        
+                        </div>
+                        </div>
+            <br>
+                        <div class="mb-3"  style="width: 40%;">
+                            <div class="row">
+                                <div class="col">
+                                <label for="ssn" class="form-label">Enter your social scurity number</label>
+                                
+                                <input type="" class="form-control" id="ssn"  aria-label="ssn"
+                                required pattern="^(\d{3}-|\(\d{3}\)\s)\d{2}-\d{4}$" maxlength="14" 
+                                title="Expected pattern is ###-##-####"  placeholder="###-##-####" aria-required="true" name="SSN">
+                                </div>
+                                
+                                </div>
+                                </div>
+                                <br>
+                             <button type="submit" class="btn btn-primary" style="margin-left: 15%; background-color: rgba(50, 137, 137, 0.904);">Submit</button>
+                             <br>
+            
+            </form>
+            <br>
+        </div>
+        {% endblock %}
+        </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

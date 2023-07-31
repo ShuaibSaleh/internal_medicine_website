@@ -1,0 +1,59 @@
+{% extends "patient.html" %}
+
+
+<!-- Done -->
+{% block body %}
+
+
+    <div  style="width: 80%  ;margin-top: 5%; margin-left: 10%; text-align: center; font-size: 16px; color: aliceblue;">
+
+            <form action="http://127.0.0.1:4000/patientViewReports" method="post">
+
+                        <label for="ReportID" style="margin-right: 3%;"> Please Enter Your Email To Search Reports: </label>
+                        <input type="email"  name= "Email"   style="width: 30% ;">
+                    
+                        <button type="submit"  style="border-radius: 10px ; width:100px; margin-left: 3%;">Search</button>
+                
+            </form>
+        <hr style="width: 60%; margin-left:20% ;">
+    </div>
+
+        
+
+ 
+    <div  style="margin-top: 5%; width: 90% ;  margin-left: 5%;">
+
+        <table   class="table table-bordered border-primary" style="color: beige; background-color: black;">
+            
+            <thead>
+                <tr>
+                        <th style=" width: 7%">Report ID</th>
+                        <th style=" width: 11%">Appointment ID</th>
+                        <th>Doctor Name</th>
+                        <th>Result</th>
+                        <th>Tests </th>
+                        <th>Medicine </th>
+                        <th>Date And Time </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                 {% for i in Reports %}
+                
+                        <tr>
+                                <td > {{ i.0 }} </td>
+                                <td > {{ i.1 }} </td>
+                                <td> {{ i.2 }} {{ i.3 }} </td>
+                                <td> {{ i.4 }} </td>
+                                <td> {{ i.5 }} </td>
+                                <td> {{ i.6 }} </td>
+                                <td> {{ i.7 }} </td>
+                        </tr>
+                
+                {% endfor%}
+           </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}

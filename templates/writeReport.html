@@ -1,0 +1,53 @@
+{% extends "doctor.html" %}
+
+{% block body %}
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+            <div class="col-12">
+                <h3 class="fw-normal text-secondary fs-4 text-uppercase mb-4">Report form</h3>
+            </div>
+            <form action="{{ url_for('writeReport') }}" method="post">
+                 
+                <div class="row g-3">
+                    
+                    <div class="col-md-6">
+                        <label for="AppID">Appointment ID</label>
+                        <input type="number" class="form-control" placeholder="Enter Appointment ID" name="AppID" required>
+                        <div id="checkAppIDHelp" class="form-text" style="color: rgb(239, 16, 16);">{{ Alert }}</div>
+                    </div>
+                    
+
+                    <div class="col-12">
+                        <label for="Result">Result</label>
+                        <textarea class="form-control" placeholder="Write The Result"  name="Result"></textarea>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="Tests">Tests</label>
+                        <textarea class="form-control" placeholder="Write Tests That Patient Need"  name="Tests"></textarea>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="Medicine">Medicine</label>
+                        <textarea class="form-control" placeholder="Write Medicine That Patient Need"  name="Medicine"></textarea>
+                    </div>
+
+
+
+
+                    <div class="col-12 mt-5">                        
+                        <button type="submit" class="btn btn-primary float-end">Submit Report</button>
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

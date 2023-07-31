@@ -1,0 +1,107 @@
+{% extends "admin.html" %}
+
+
+   <!-- Done -->
+{% block body %}
+     <br><br>  <br><br> 
+     
+    <div style="margin-left: 35%; color: rgba(233, 234, 236, 0.616);">
+        
+        <form action="{{ url_for('addDoctor') }}" method="post">
+
+                <!-- name  -->
+                    <div class="mb-3"  style="width: 45%;">
+
+                        <div class="row">
+                                <div class="col">
+                                <input type="text" class="form-control" placeholder="First name" aria-label="First name" required  name="Fname">
+                                </div>
+                                <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" required name="Lname">
+                                </div>
+                        </div>
+                        
+                    </div>
+
+
+                <!-- Email  -->
+                    <div class="mb-3"  style="width: 45%;">
+
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"   name="Email">
+
+                    </div>
+
+
+                <!-- password  -->
+                    <div class="mb-3" style="width: 45%;" >
+                    
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1"  name="password">
+                    
+                        <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="Password2"  required   name="confirmPassword">
+
+                     </div>
+
+
+                <!--  not match password -->
+                    <div style="color: red;">
+                        {{ y }}
+                    </div>
+                    
+
+
+
+
+                <!-- gender -->
+                    <div class="mb-3"  style="width: 45%;">
+
+                            <label for="selectGender" class="form-label">Select gender</label>
+                            <select class="form-select" id="selectGender" aria-label="Select gender" required  name="gender">
+                                <option selected value="none">Select gender</option>
+                            
+                                <option value="male">Male</option>
+                                <option value="femal">Female</option>
+                            </select>
+                    </div>
+
+
+                <!-- brithdate -->
+                    <div class="mb-3"  style="width: 45%;">
+                        <div class="row">
+                            <div class="col">
+                            <label for="birthdate" class="form-label">Enter your birthdate</label>
+                            <input type="date" class="form-control" id="birthdate" placeholder="Birthdate" aria-label="Birthdate" required name="Birthdate">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+
+                <!-- SSN -->
+                    <div class="mb-3"  style="width: 45%;">
+                            <div class="row">
+                                    
+                                <div class="col">
+                                    <label for="ssn" class="form-label">Social scurity number</label>
+
+                                    <input type="" class="form-control" id="ssn"  aria-label="ssn"
+                                    required pattern="^(\d{3}-|\(\d{3}\)\s)\d{2}-\d{4}$" maxlength="14" 
+                                    title="Expected pattern is ###-##-####"  placeholder="###-##-####" aria-required="true" name="SSN">
+                                    
+                                    
+                                </div>
+                                    
+                            </div>
+                    </div>
+
+                        <br><br>
+                <button type="submit" class="btn btn-primary" 
+                style="margin-left:10% ; background-color: cadetblue; width: 25%; font-size: large;">
+                    
+                    SUBMIT</button>
+         </form>
+    </div>
+    <br><br>  <br><br>  <br><br>
+      {% endblock %}

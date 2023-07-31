@@ -1,0 +1,36 @@
+{% extends "signup.html" %}
+
+
+
+{% block form %}
+<div  style="margin-left: 35%;"> 
+    <form action="{{ url_for('signin') }}" method="post" style="color: antiquewhite;"  style="margin-left: 40%;">
+       <br>
+
+       
+        <div class="mb-3" style="width: 40%;">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required  name="Email">
+        <div id="emailHelp" class="form-text" style="color: antiquewhite;">We'll never share your email with anyone else.</div>
+        </div>
+        <br>
+        <div class="mb-3"  style="width: 40%;">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="Password1"  required name="password">
+        </div>
+
+        
+        <br>
+                
+                        <button type="submit" class="btn btn-primary" style="margin-left: 15%; background-color: rgba(50, 137, 137, 0.904);">Submit</button>
+                        <br>
+
+        </form>
+    <br>
+    </div>
+
+       
+       
+        
+
+{% endblock %}

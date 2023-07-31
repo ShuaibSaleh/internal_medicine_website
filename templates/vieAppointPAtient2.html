@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+            <title>viewAppointment</title>
+
+    </head>
+
+    <!-- Done  -->
+
+    <body>
+
+            <section class="header">   
+                            <img src="{{ url_for('static', filename = 'images/backGround.jpg')}}" alt=" logo" style="width:100% ; height:300px ;" >
+            </section>
+
+
+            <section class="Details">
+
+                    <div>
+
+                        <table class="table table-success table-striped " >
+                        
+                            <header>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name of patient</th>
+                                        <th>name Of Doctor</th>
+                                        <th>Appointment </th>
+                                    </tr>
+                            </header>
+
+                            <body>
+                                {% for r in dataS%}
+                    
+                                    <tr>
+                                        <td>{{ r.0 }}</td>
+                                        <td>{{ r.1 }}  {{ r.2}}</td>
+                                        <td>{{ r.3 }} {{ r.4 }}</td>
+                                        <td>{{ r.5 }}</td>
+                                    </tr>
+                
+                                {% endfor %}
+                            </body>
+                            
+                            
+                
+                        </table>
+                
+                    </div>
+
+
+                    <div style="color: rgb(50, 50, 96); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align: center; 
+                                width: 50% ; margin-left: 25%;" >
+                                
+                        <br><hr>
+                        <h4>This Is Your Appointments ,  None Mean  not Determined Yet</h4>
+                        
+                    </div>
+
+            </section>    
+    
+    </body>
+</html>

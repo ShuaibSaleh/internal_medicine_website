@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Doctor</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+   
+
+</head>
+<body>
+      
+        <div class="nav-links"  style="background-color:rgba(118, 120, 120, 0.232) ;">
+
+                <ul class="nav"  >
+                      <li class="nav-item" >
+                          <a class="nav-link" href="http://127.0.0.1:4000/">HOME</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:4000/writeReport">WRITE REPORT</a>
+                      </li>
+                </ul>
+        </div>
+        
+        
+        
+       
+      {% block body %}
+
+        <div style="width: 40%; text-align: center; margin-left: 30%; margin-top: 5%; color: aliceblue; font-size: 20px ;">
+            <h3> Scheduled Appointments</h3>
+          <hr>
+        </div>
+        
+
+       <div  class ="x1" style="margin:2% ; width:96% ;">
+
+          <table class="table table-bordered border-primary" 
+          style="color: rgb(255, 244, 244); background-color: rgba(23, 24, 24, 0.393); ">
+            <br><br><br>
+            
+            <thead>
+                  <tr>
+                      <th>Appointment ID</th>
+                      <th>Patient Name</th>
+                      <th>Description</th>
+                      <th>Date</th>
+                   </tr>
+            </thead>
+        
+            <tbody>
+                {% for i in Appointments %}
+                
+                      <tr>
+                        <td > {{ i.0 }} </td>
+                        <td> {{ i.1 }} {{ i.2 }} </td>
+                        <td> {{ i.3 }}  </td>
+                        <td> {{ i.4 }} </td> 
+                      </tr>
+                
+                {% endfor%}
+            </tbody>
+          </table>
+        
+        </div>
+        
+     {% endblock %}
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+<style>
+  body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    background-image: url( "{{ url_for('static', filename = 'images/backGround14.jpg')}}" ) 
+    
+  }
+
+  .x1{
+    font-size: 18px;
+  }
+
+
+  .nav-links ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+}
+</style>
+</html>

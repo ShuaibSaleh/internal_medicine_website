@@ -1,0 +1,123 @@
+<!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Bootstrap demo</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      
+    
+
+  </head>
+
+  <!-- Done -->
+  <body>
+      
+    <div class="nav-links" >
+
+    
+        <ul class="nav" >
+
+            <li class="nav-item" >
+                <a class="nav-link" href="http://127.0.0.1:4000/">HOME</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:4000/addDoctor">ADD DOCTOR</a>
+            </li>
+          
+      
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:4000/viewDoctor">VIEW APPOINTMENTS</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:4000/adminApproveAppointment">APPOINTMENTS</a>
+            </li>
+
+            <li class="nav-item">
+              
+                <a class="nav-link" href="http://127.0.0.1:4000/viewReports">VIEW REPORT</a>
+            </li>
+              
+          </ul>
+    </div>
+     
+
+
+
+     {% block body %}
+        
+        <div class="admindiv"  
+        style="color: rgb(237, 145, 145); margin-left: 1%; margin-right: 80%; margin-top: 4%;">
+            <h1> Admin</h1>
+            <hr>
+        </div>
+     
+          
+        <div class="infoAdmin" 
+         style=" width: 98%; margin-left: 1%; margin-right: 1%; margin-top: 5%;">
+            <table  class="table "  style="color: rgb(206, 194, 194);">
+
+
+              <thead>
+                <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Gender</th>
+                      <th>birthdate</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                  <tr>
+                      <td> {{ dataSend[0] }} </td>
+                      <td> {{ dataSend[1] }} </td>
+                      <td> {{ dataSend[2] }} </td>
+                      <td> {{ dataSend[3] }} </td>
+                      <td> {{ dataSend[4] }} </td>
+                  </tr>
+             </tbody>
+
+
+            </table>
+
+        </div>
+
+     {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+
+
+
+
+  <style>
+        body{
+          background-size: cover;
+          background-repeat: no-repeat;
+          
+          background-image: url( "{{ url_for('static', filename = 'images/backGround12.jpg')}}" ) 
+          
+        }
+        
+        .nav-links ul li a{
+          color: rgba(226, 212, 212, 0.986);
+            text-decoration: none;
+            font-size: 16px;
+            
+          
+        }
+        .nav-links{
+          background-color: rgba(84, 84, 128, 0.277);
+        }
+</style>
+
+
+
+
+</html>

@@ -1,0 +1,62 @@
+{% extends "admin.html" %}
+
+{% block body %}
+
+
+          <div class="admindiv"  
+          style="color: rgb(237, 145, 145);width: 20%; margin-left: 40%;margin-top: 5%; text-align: center; ">
+              <h3> Appointments</h3>
+              <hr>
+          </div>
+          
+          
+
+
+          <div  style="width:80% ; margin-left: 10%; margin-top: 4%;">
+                <table class="table table-dark table-striped-columns" style="color: beige;">
+
+                  <thead>
+                      <tr>
+                          <th>ID</th>
+                          <th>Patient ID</th>
+                          <th>Doctor ID</th>
+                          <th>Description</th>
+                      </tr>
+                  </thead>
+
+
+                  <tbody>
+                     
+                    {% for i in Appointments %}
+
+                        <tr>
+                            <td > {{ i.0 }} </td>
+                            <td> {{ i.1 }} {{ i.2 }} </td>
+                            <td> {{ i.3 }} {{ i.4 }} </td>
+                            <td> {{ i.5 }} </td>
+                        </tr>
+                      
+                    {% endfor%}
+                  </tbody>
+
+
+                </table>
+
+          </div>
+
+          <div style="width:60% ; margin-left:20% ;margin-right:20%;margin-top: 5%;
+          color: aliceblue; background-color: rgba(60, 41, 19, 0.186); text-align: center;">
+
+              <form action="http://127.0.0.1:4000/adminApproveAppointment" method="post">
+                    <label >Select Date: </label>
+                    <input type="date" name= "date"  style="margin-left: 2%;" >
+                    <label  style="margin-left: 2%;" > Enter ID of Appointment:</label>
+                    <input type="number"  style="width: 15%;margin-left: 2%;" name="AppID">
+                    <input type="submit"  style="margin-left: 2%;">
+              </form>
+
+          </div>
+
+          
+
+{% endblock %}

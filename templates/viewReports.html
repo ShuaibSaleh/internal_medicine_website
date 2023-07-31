@@ -1,0 +1,64 @@
+{% extends "admin.html" %}
+
+<!-- Done -->
+{% block body %}
+
+
+
+
+        <div style="width: 60%; text-align: center; margin-top: 5%; margin-left:20%; color: aliceblue;">
+                <form action="http://127.0.0.1:4000/viewReports" method="post">
+
+                    
+                    <label for="ReportID" style="margin-right:3% ;">Enter ID To Search For a Specific Report</label>
+                    <input type="number" name= "ReportID"  >
+                    <button type="submit" style="margin-left:3%; border-radius: 10px ; width:10%;">Search</button>
+                
+                </form>
+                <hr>
+        </div>
+
+
+
+    <div  style="margin-top: 5%;" >
+        <table class="table table-bordered border-primary" 
+        style="color: beige; background-color: rgba(0, 0, 0, 0.3); width: 96%; margin-left: 2%;">
+            
+            <thead>
+                <tr>
+                    <th style="width: 7;">Report ID</th>
+                    <th style="width: 11;">Appointment ID</th>
+                    <th>Patient Name</th>
+                    <th>Doctor Name</th>
+                    <th>Result</th>
+                    <th>Tests </th>
+                    <th>Medicine </th>
+                    <th>Date And Time </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for i in Reports %}
+                
+                        <tr>
+                            <td > {{ i.0 }} </td>
+                            <td > {{ i.1 }} </td>
+
+                            <td> {{ i.2 }} {{ i.3 }} </td>
+                            <td> {{ i.4 }} {{ i.5 }} </td>
+                            <td> {{ i.6 }} </td>
+                            <td> {{ i.7 }} </td>
+                            <td> {{ i.8 }} </td>
+                            <td> {{ i.9 }} </td>  
+                            
+                        </tr>
+                        
+                {% endfor%}
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+{% endblock %}
